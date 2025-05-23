@@ -13,7 +13,7 @@ const NavBar = ({ handleSignout }) => {
                     <ul><Link>Track</Link>
                     <li><Link to="/calorietrackerform">Calorie Tracker</Link></li>
                     <li><Link to="/habittrackerform">Habit Tracker</Link></li>
-                    <li><Link>Goals</Link></li>
+                    <li><Link to="/goalform">Goals</Link></li>
                     </ul>
                     <li><Link to="/signin" onClick={handleSignout}>Sing Out</Link></li>
                 </ul>

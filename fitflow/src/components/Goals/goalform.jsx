@@ -13,7 +13,7 @@ return (
     <main>
         <h1>Lets start Tracking</h1>
         <form autoComplete='off' >
-             <h1> Calorie Tracker</h1>
+             <h1> Goals</h1>
              <label htmlFor=""></label>
              <input 
              type=""

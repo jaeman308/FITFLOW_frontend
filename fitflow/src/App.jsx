@@ -6,7 +6,7 @@ import SigninForm from './components/SigninForm/SigninForm';
 import Dashboard from './components/Dashboard/dashboard';
 import Calorietrackerform from './components/CalorieTracker/calorietrackerform';
 import Habittrackerform from './components/HabitTracker/habittrackerform';
-import Goalform from './components/goals/goalform';
+import Goalform from './components/goals/goalform'
 import * as authService from './components/services/authService';
 import './App.css'
 

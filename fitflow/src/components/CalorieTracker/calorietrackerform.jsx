@@ -12,30 +12,37 @@ const CalorieTrackerForm = ({handleAddCalorietracker, handleupdateCalorietracker
 return (
     <main>
         <h1>Lets start Tracking</h1>
+        <div>
         <form autoComplete='off' >
              <h1> Calorie Tracker</h1>
-             <label htmlFor=""></label>
+             <label htmlFor="Date">Date: </label>
              <input 
-             type=""
-             id=""
-             name=""            
+             type="Date"
+             id="date"
+             name="date"            
              />
-             <label htmlFor=""></label>
+             <label htmlFor="CalorieInTakeGoal">Daily Calorie Goal: </label>
              <input 
-             type=""
-             id=""
-             name=""            
+             type="number"
+             id="DailyInTake"
+             name="DailyInTake"            
              />
-            <label htmlFor=""></label>
+             <label htmlFor="CalorieConsumed">Consumed Calories: </label>
              <input 
-             type=""
-             id=""
-             name=""            
+             type="number"
+             id="consumed"
+             name="consumed"            
+             />
+            <label htmlFor="Notes">Notes:</label>
+             <input 
+             type="text"
+             id="note"
+             name="note"            
              />
 
-
-
+        <button type="submit">Submit</button>
         </form>
+        </div>
 
 
     </main>
