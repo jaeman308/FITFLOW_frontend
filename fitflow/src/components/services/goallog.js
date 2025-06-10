@@ -1,6 +1,6 @@
-const BASE_URL = `${import.meta.env.VITE_EXPRESS_BACKEND_URL}/calorieTracker`;
+const BASE_URL = `${import.meta.env.VITE_EXPRESS_BACKEND_URL}/goal`;
 
-const addCalorieTracker = async (calorietrackerFormData) => {
+const addGoalLog = async (goalLogFormData) => {
     try {
         const res = await fetch(BASE_URL, {
             method: 'POST',
@@ -8,59 +8,59 @@ const addCalorieTracker = async (calorietrackerFormData) => {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(calorietrackerFormData),
+            body: JSON.stringify(goalLogFormData),
         });
         if (!res.ok) {
             const errorDetails = await res.text();
-            throw new Error(`Failed to create calorie tracker. Status: ${res.status}, Message: ${errorDetails}`);
+            throw new Error(`Failed to create goal log. Status: ${res.status}, Message: ${errorDetails}`);
         }
         return res.json();
     } catch (err) {
-        console.log('Error creating calorie tracker:', err);
+        console.log('Error creating goal log:', err);
         throw err;
     }
 };
 
-const updateCalorieTracker = async (calorietrackerId, calorietrackerFormData) => {
+const updateGoalLog = async (goallogId, goalLogFormData) => {
     try {
-        const res = await fetch(`${BASE_URL}/${calorietrackerId}`, {
+        const res = await fetch(`${BASE_URL}/${goallogId}`, {
             method: 'PUT',
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(calorietrackerFormData),
+            body: JSON.stringify(goalLogFormData),
         });
         if (!res.ok) {
             const errorDetails = await res.text();
-            throw new Error(`Failed to update tracker. Status: ${res.status}, Message: ${errorDetails}`);
+            throw new Error(`Failed to update log. Status: ${res.status}, Message: ${errorDetails}`);
         }
         return res.json();
     } catch (err) {
-        console.log('Error updating the tracker:', err);
+        console.log('Error updating the log:', err);
         throw err;
     }
 };
 
-const getCalorieTrackerById = async (calorietrackerId) => {
+const getGoalLogById = async (goallogId) => {
     try {
-        const res = await fetch(`${BASE_URL}/${calorietrackerId}`, {
+        const res = await fetch(`${BASE_URL}/${goallogId}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         if (!res.ok) {
             const errorDetails = await res.text();
-            throw new Error(`Failed to fetch tracker. Status: ${res.status}, Message: ${errorDetails}`);
+            throw new Error(`Failed to fetch log. Status: ${res.status}, Message: ${errorDetails}`);
         }
         return res.json();
     } catch (err) {
-        console.log('Error fetching calorie tracker:', err);
+        console.log('Error fetching goal log:', err);
         throw err;
     }
 };
 
-const deleteCalorieTracker = async (calorietrackerId) => {
+const deleteGoalLog = async (goallogId) => {
     try {
-        const res = await fetch(`${BASE_URL}/${calorietrackerId}`, {
+        const res = await fetch(`${BASE_URL}/${goallogId}`, {
             method: 'DELETE',
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -69,18 +69,18 @@ const deleteCalorieTracker = async (calorietrackerId) => {
         });
         if (!res.ok) {
             const errorDetails = await res.text();
-            throw new Error(`Failed to delete tracker. Status: ${res.status}, Message: ${errorDetails}`);
+            throw new Error(`Failed to delete log. Status: ${res.status}, Message: ${errorDetails}`);
         }
         return res.json();
     } catch (err) {
-        console.log('Error deleting the tracker:', err);
+        console.log('Error deleting the log:', err);
         throw err;
     }
 };
 
 export {
-    addCalorieTracker,
-    updateCalorieTracker,
-    getCalorieTrackerById,
-    deleteCalorieTracker,
+    addGoalLog,
+    updateGoalLog,
+    getGoalLogById,
+    deleteGoalLog,
 };
